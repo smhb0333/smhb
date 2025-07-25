@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,19 +17,17 @@
             box-shadow: none !important;
         }
 
-.position-fixed {
-    position: fixed; /* ensure it's fixed */
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    margin-left: 1rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    z-index: 9999; /* VERY HIGH z-index to appear above everything */
-}
+        .position-fixed {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            margin-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 9999;
+        }
 
         .position-fixed a {
             margin-bottom: 1rem;
@@ -150,7 +147,6 @@
             position: absolute;
             left: 50%;
             bottom: 6px;
-            /* Tweak distance from text */
             width: 0%;
             height: 2px;
             background-color: var(--secondary-color);
@@ -169,7 +165,6 @@
             /* Subtle, centered underline */
             opacity: 1;
         }
-
 
         /* --- Hero Section --- */
         .hero-section {
@@ -736,7 +731,6 @@
         }
     </style>
 </head>
-
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100" tabindex="0">
 
     <!-- Side icon Section -->
@@ -1339,55 +1333,84 @@
         </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section-padding bg-light">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-heading">Get In Touch</h2>
-      <p class="lead">
-        Interested in working together or just want to say hi? I'm open to freelance projects,
-        contract-to-hire, and 30+ hours/week engagements.
-      </p>
-    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading">Get In Touch</h2>
+                <p class="lead">
+                    Interested in working together or just want to say hi? I'm open to freelance projects,
+                    contract-to-hire, and 30+ hours/week engagements.
+                </p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg rounded-4">
+                        <div class="card-body p-5">
+                            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+                                onsubmit="return sendToWhatsApp();">
+                                <input type="hidden" name="access_key" value="87b7b7cd-f7ae-4354-9c4c-fb98b712fe07">
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card border-0 shadow-lg rounded-4">
-          <div class="card-body p-5">
-            <form action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="87b7b7cd-f7ae-4354-9c4c-fb98b712fe07">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label for="name" class="form-label">Full Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6">
-                  <label for="email" class="form-label">Email Address</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-                </div>
-                <div class="col-12">
-                  <label for="subject" class="form-label">Subject</label>
-                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Project Inquiry / Question">
-                </div>
-                <div class="col-12">
-                  <label for="message" class="form-label">Message</label>
-                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-                </div>
-              </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            placeholder="Your Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="name@example.com" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <input type="text" class="form-control" id="subject" name="subject"
+                                            placeholder="Project Inquiry / Question" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5"
+                                            placeholder="Write your message here..." required></textarea>
+                                    </div>
+                                </div>
 
-              <div class="d-grid mt-4">
-                <button type="submit" class="btn btn-outline-primary-custom btn-lg shadow-sm">
-                  <i class="bi bi-send me-2"></i>Send Message
-                </button>
-              </div>
-            </form>
-          </div>
+                                <div class="d-grid mt-4">
+                                    <button type="submit" class="btn btn-outline-primary-custom btn-lg shadow-sm">
+                                        <i class="bi bi-send me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </form>
+
+                            <!-- WhatsApp Logic -->
+                            <script>
+                                function sendToWhatsApp() {
+                                    const name = document.getElementById('name').value.trim();
+                                    const email = document.getElementById('email').value.trim();
+                                    const subject = document.getElementById('subject').value.trim();
+                                    const message = document.getElementById('message').value.trim();
+
+                                    const phone = '923330441552'; // Your WhatsApp number without + or spaces
+
+                                    const fullMessage =
+                                        `Contact Form Submission:\n\n` +
+                                        `Name: ${name}\n` +
+                                        `Email: ${email}\n` +
+                                        `Subject: ${subject}\n` +
+                                        `Message:\n${message}`;
+
+                                    const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(fullMessage)}`;
+                                    window.open(waUrl, '_blank');
+
+                                    return true; // Let the form also submit to Web3Forms
+                                }
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- Back to top btn -->
     <a href="#" class="back-to-topic-btn">🡹</a>
@@ -1436,7 +1459,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -1486,5 +1509,4 @@
     </script>
 
 </body>
-
 </html>
