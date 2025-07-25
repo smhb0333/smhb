@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza B. | Full-Stack Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .btn:hover,
+        .btn:focus,
+        .btn:active {
+            border: 1px solid transparent !important;
+            box-shadow: none !important;
+        }
+
+.position-fixed {
+    position: fixed; /* ensure it's fixed */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-left: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    z-index: 9999; /* VERY HIGH z-index to appear above everything */
+}
+
+        .position-fixed a {
+            margin-bottom: 1rem;
+        }
+
+        .position-fixed a:last-child {
+            margin-bottom: 0;
+        }
+
+        .fs-3 {
+            color: var(--primary-color);
+        }
+
+        .fs-3:hover {
+            color: black;
+        }
+
+        :root {
+            --primary-color: #392672;
+            --secondary-color: #fd7e14;
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+            --white: #ffffff;
+            --card-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s ease;
+            --primary-color-rgb: 57, 38, 114;
+        }
+
+        /* --- Base Styles --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+            background-color: var(--white);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Headings --- */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--primary-color);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* --- Section Styling --- */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-heading::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        /* --- Utility Classes --- */
+        .text-primary-custom {
+            color: var(--primary-color);
+        }
+
+        .bg-primary-custom {
+            background-color: var(--primary-color);
+        }
+
+        /* --- Navbar Brand Image --- */
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        /* --- Nav Links --- */
+        .navbar-nav .nav-link {
+            color: var(--white);
+            position: relative;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            transition: color 0.4s ease;
+            text-decoration: none;
+        }
+
+        /* --- Hover & Focus Color Shift --- */
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: var(--secondary-color);
+        }
+
+        /* --- Active Link Styling --- */
+        .navbar-nav .nav-link.active {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* --- Underline Effect (Inactive by Default) --- */
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 6px;
+            /* Tweak distance from text */
+            width: 0%;
+            height: 2px;
+            background-color: var(--secondary-color);
+            border-radius: 1px;
+
+            opacity: 0;
+            transform: translateX(-50%);
+            transition:
+                width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.5s ease-in-out;
+        }
+
+        /* --- Animate Underline on Active --- */
+        .navbar-nav .nav-link.active::after {
+            width: 60%;
+            /* Subtle, centered underline */
+            opacity: 1;
+        }
+
+
+        /* --- Hero Section --- */
+        .hero-section {
+            color: var(--white);
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            background-color: var(--primary-color);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            color: var(--white);
+        }
+
+        .hero-section .sub-heading {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+
+        .hero-section .intro-text {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .typed-words {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* --- Hero Button --- */
+        .btn-hero {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all var(--transition-speed);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-hero:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- General Buttons --- */
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all var(--transition-speed);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #2a1a51;
+            border-color: #2a1a51;
+            transform: translateY(-2px);
+            color: var(--white);
+        }
+
+        .btn-outline-primary-custom {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all var(--transition-speed);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-primary-custom:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* --- Card Styling --- */
+        .card {
+            border: none;
+            box-shadow: var(--card-shadow);
+            border-radius: 10px;
+            transition: transform var(--transition-speed);
+            height: 100%;
+            padding: 20px;
+            background-color: var(--white);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .icon-box {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* --- About Section --- */
+        .about-profile-card {
+            border: none;
+            box-shadow: var(--card-shadow);
+            border-radius: 15px;
+            padding: 30px;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .about-profile-card img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+        }
+
+        .about-profile-card h3 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .about-profile-card .text-muted {
+            font-size: 0.95rem;
+            color: #6c757d !important;
+        }
+
+        .about-info-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-info-text strong {
+            color: var(--primary-color);
+        }
+
+        .about-philosophy-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .about-philosophy-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: var(--dark-text);
+        }
+
+        .about-philosophy-list li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .languages-badges .badge {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 25px;
+            margin: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        /* --- Skills Section --- */
+        .skill-badge {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 5px 5px 5px 0;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        /* --- Experience Section --- */
+        .experience-item {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            position: absolute;
+            left: -8px;
+            top: 5px;
+        }
+
+        .experience-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .experience-item .duration {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- Portfolio Section --- */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(var(--primary-color-rgb), 0.85);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h5 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer .social-icons a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color var(--transition-speed);
+        }
+
+        .footer .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Portfolio Overlay (Adjusted for single action) --- */
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(var(--primary-color-rgb), 0.95);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            text-align: center;
+            padding: 30px 20px;
+            box-sizing: border-box;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h5 {
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .portfolio-overlay p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .portfolio-overlay .overlay-action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all var(--transition-speed);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-overlay .overlay-action-link:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-overlay .overlay-action-link i {
+            font-size: 1.2em;
+        }
+
+        .portfolio-item .stretched-link::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            content: "";
+        }
+
+        /* --- Back to Topic Button --- */
+        .back-to-topic-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 20px;
+            border-radius: 50%;
+            font-size: 20px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid transparent;
+        }
+
+        .back-to-topic-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-color: var(--secondary-color);
+        }
+
+        .back-to-topic-btn:active {
+            transform: translateY(-2px) scale(0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-to-topic-btn.near-footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .back-to-topic-btn.near-footer:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 991.98px) {
+            .hero-section {
+                padding: 100px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-section .sub-heading {
+                font-size: 1.5rem;
+            }
+
+            .hero-section .intro-text {
+                font-size: 1.2rem;
+            }
+
+            .btn-hero {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+
+            .section-heading {
+                font-size: 2rem;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .about-profile-card {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .hero-section {
+                padding: 80px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-section .sub-heading {
+                font-size: 1.3rem;
+            }
+
+            .hero-section .intro-text {
+                font-size: 1rem;
+            }
+
+            .btn-hero {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+
+            .section-heading {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
+            .about-profile-card img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .about-profile-card h3 {
+                font-size: 1.8rem;
+            }
+
+            .about-info-text {
+                font-size: 1rem;
+            }
+
+            .about-philosophy-list li {
+                font-size: 0.9rem;
+            }
+
+            .languages-badges .badge {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-section .sub-heading {
+                font-size: 1.1rem;
+            }
+
+            .hero-section .intro-text {
+                font-size: 0.9rem;
+            }
+
+            .btn-hero {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+
+            .about-profile-card {
+                padding: 20px;
+            }
+
+            .about-profile-card img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .about-profile-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .btn-outline-primary-custom {
+                width: 100%;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100" tabindex="0">
+
+    <!-- Side icon Section -->
+    <div class="position-fixed">
+        <!-- GitHub Icon -->
+        <a target="_blank" rel="noopener noreferrer" class="fs-3" href="#" aria-label="GitHub">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1.5em"
+                width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.976 0A7.977 7.977 0 0 0 0 7.976c0 3.522 2.3 6.507 5.431 7.584.392.049.538-.196.538-.392v-1.37c-2.201.49-2.69-1.076-2.69-1.076-.343-.93-.881-1.175-.881-1.175-.734-.489.048-.489.048-.489.783.049 1.224.832 1.224.832.734 1.223 1.859.88 2.3.685.048-.538.293-.88.489-1.076-1.762-.196-3.621-.881-3.621-3.964 0-.88.293-1.566.832-2.153-.05-.147-.343-.978.098-2.055 0 0 .685-.196 2.201.832.636-.196 1.322-.245 2.007-.245s1.37.098 2.006.245c1.517-1.027 2.202-.832 2.202-.832.44 1.077.146 1.908.097 2.104a3.16 3.16 0 0 1 .832 2.153c0 3.083-1.86 3.719-3.62 3.915.293.244.538.733.538 1.467v2.202c0 .196.146.44.538.392A7.984 7.984 0 0 0 16 7.976C15.951 3.572 12.38 0 7.976 0z">
+                </path>
+            </svg>
+        </a>
+
+        <!-- Email Icon -->
+        <a target="_blank" rel="noopener noreferrer" class="fs-3" href="#" aria-label="Email">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"
+                height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207">
+                </path>
+            </svg>
+        </a>
+
+        <!-- LinkedIn Icon -->
+        <a target="_blank" rel="noopener noreferrer" class="fs-3" href="#" aria-label="LinkedIn">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1.5em"
+                width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                </path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom fixed-top py-3" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Hamza B.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education & Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="container-fluid py-5 mt-5">
+        <div class="row align-items-center justify-content-center mt-5">
+            <div class="col-lg-5 d-flex justify-content-center flex-column text-center text-lg-start intro-text">
+                <div class="intro-name">
+                    <h1 class="fs-4 fs-lg-2 fw-light">Hi! I am</h1>
+                    <h1 class="fs-1 fs-lg-3 fw-bold text-primary-custom">Hamza Bukhari</h1>
+                    <p class="sub-heading">Websites, Apps, UI/UX — All In One Place</p>
+                    <p class="fs-6 fs-lg-5">
+                        I’m a self-taught programmer with an interest in
+                        <em><span class="typed-words text-orange"></span></em>
+                    </p>
+                </div>
+                <div class="intro-bio">
+
+                </div>
+                <div class="d-flex flex-wrap mt-3 mt-lg-4 justify-content-center justify-content-lg-start">
+
+                    <a href="#contact" class="btn btn-hero mb-2">Let’s Build Your Product</a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 d-flex justify-content-center gif-container">
+                <img alt="Home Gif" src="./assets/img/gif/Home_Gif.gif" class="img-fluid rounded-lg" />
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <section class="col-lg-4 col-md-5 text-center">
+                    <div class="about-profile-card shadow-sm p-4 bg-white rounded">
+                        <figure class="mb-3">
+                            <img src="./assets/img/my_photos/flip.jpg" class="img-fluid rounded-circle shadow-sm"
+                                alt="Portrait of Hamza Bukhari" width="150" height="150">
+                        </figure>
+                        <figcaption>
+                            <h3 class="fw-bold mb-1">Hamza Bukhari</h3>
+                            <p class="text-muted mb-1">Full-Stack Developer | Web, Android & iOS</p>
+                            <p class="text-muted mb-1"><i class="fas fa-map-marker-alt me-2"></i> Karachi, Pakistan</p>
+                            <p class="text-muted mb-1"><i class="fas fa-money-bill-wave me-2"></i> $18.00/hr</p>
+                            <p class="text-muted"><i class="fas fa-clock me-2"></i> Available: 30+ hrs/week</p>
+                            <a href="#contact" class="btn btn-outline-primary-custom mt-3"
+                                aria-label="Hire Hamza Bukhari">
+                                Hire Me
+                            </a>
+                        </figcaption>
+                    </div>
+                </section>
+
+                <div class="col-lg-8 col-md-7">
+                    <h2 class="section-heading">About Me</h2>
+                    <p class="about-info-text">
+                        I’m a Full-Stack Web & Mobile App Developer with over 5 years of hands-on experience in
+                        crafting robust digital solutions for startups, SMEs, and enterprises. My journey has been
+                        driven by a passion for transforming complex ideas into intuitive and high-performing platforms.
+                        From initial branding and UI/UX design to comprehensive website and mobile app
+                        development, I deliver complete, scalable, and business-ready products that not only look
+                        great but also effectively convert and perform.
+                    </p>
+                    <p class="about-info-text">
+                        My expertise spans diverse industries, including e-commerce, education, healthcare, logistics,
+                        and event management, allowing me to tailor solutions to unique business challenges. I am
+                        committed to writing clean, scalable code and providing thorough documentation. My
+                        approach is always business-focused, integrating crucial elements like SEO optimization,
+                        marketing strategies, and sales funnel enhancements from the ground up, ensuring your digital
+                        investment yields maximum returns.
+                    </p>
+                    <div class="mt-4">
+                        <h4>My Development Philosophy:</h4>
+                        <ul class="about-philosophy-list">
+                            <li><i class="fas fa-check-circle"></i> <strong>User-Centric Design:</strong> Always
+                                prioritizing the end-user, I create intuitive and delightful experiences that drive
+                                engagement.</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Scalability & Maintainability:</strong>
+                                Building future-proof solutions that grow seamlessly with your business and are easy to
+                                manage.</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Performance Optimization:</strong> Dedicated
+                                to developing fast, efficient, and highly responsive applications for superior user
+                                satisfaction.</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Business-Driven Development:</strong>
+                                Aligning every technical decision with your strategic business objectives to ensure
+                                tangible ROI.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 languages-badges">
+                        <h4>Spoken Languages:</h4>
+                        <span class="badge">English: Native or Bilingual</span>
+                        <span class="badge">Urdu: Native or Bilingual</span>
+                        <span class="badge">Chinese: Conversational</span>
+                        <span class="badge">German: Conversational</span>
+                        <span class="badge">Spanish: Conversational</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">What I Offer</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="fas fa-globe"></i></div>
+                        <h5 class="card-title">Web Development</h5>
+                        <p class="card-text">Custom Coded Websites (HTML5, CSS3, JavaScript, PHP, Laravel, React,
+                            Angular, Node.js), CMS Platforms (WordPress, Shopify, Wix, Webflow), E-commerce Development
+                            (WooCommerce, Shopify), SEO Optimization, Speed Performance, Security.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
+                        <h5 class="card-title">Mobile App Development</h5>
+                        <p class="card-text">Native Android (Java, Kotlin) & iOS (Swift) Apps, Cross-Platform
+                            Development (Flutter), Backend Integration (Firebase, REST APIs), Real-Time Features (Chat,
+                            Notifications), App Store & Play Store Publishing.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="fas fa-paint-brush"></i></div>
+                        <h5 class="card-title">UI/UX & Graphic Design</h5>
+                        <p class="card-text">App & Web UI/UX (Figma, Adobe XD, Canva), Branding, Logo Design, Marketing
+                            Assets, Fully Responsive, Accessible Layouts. Transforming designs into beautiful,
+                            functional UIs.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="fas fa-database"></i></div>
+                        <h5 class="card-title">Backend & Database Engineering</h5>
+                        <p class="card-text">Scalable and secure backends using Firebase, MySQL, and SQL Server. Built
+                            RESTful APIs for seamless communication, implemented RBAC, real-time sync, and database
+                            indexing for performance.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="fas fa-shopping-cart"></i></div>
+                        <h5 class="card-title">E-commerce & CMS Integration</h5>
+                        <p class="card-text">Tailored, scalable e-commerce and content management platforms for various
+                            industries. Expertise in WooCommerce, Shopify, and WordPress, covering secure payments,
+                            real-time orders, and admin panels.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                        <h5 class="card-title">SEO & Marketing Integration</h5>
+                        <p class="card-text">Optimizing pages using Yoast SEO, schema markup, meta tags, and sitemaps.
+                            Integrated Google Analytics, Tag Manager, and Search Console for traffic tracking and
+                            conversion analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-white">
+        <div class="container">
+            <h2 class="section-heading">Technical Skills</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4">
+                        <h5 class="card-title">Languages & Frameworks</h5>
+                        <div class="d-flex flex-wrap">
+                            <span class="skill-badge">HTML5</span>
+                            <span class="skill-badge">CSS3</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">PHP</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Laravel</span>
+                            <span class="skill-badge">Node.js</span>
+                            <span class="skill-badge">React</span>
+                            <span class="skill-badge">Angular</span>
+                            <span class="skill-badge">Flutter</span>
+                            <span class="skill-badge">Dart</span>
+                            <span class="skill-badge">Swift</span>
+                            <span class="skill-badge">Kotlin</span>
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">C#</span>
+                            <span class="skill-badge">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4">
+                        <h5 class="card-title">Databases & Backends</h5>
+                        <div class="d-flex flex-wrap">
+                            <span class="skill-badge">MySQL</span>
+                            <span class="skill-badge">MongoDB</span>
+                            <span class="skill-badge">Firebase Firestore</span>
+                            <span class="skill-badge">Realtime Database</span>
+                            <span class="skill-badge">SQL Server</span>
+                            <span class="skill-badge">ASP.NET</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4">
+                        <h5 class="card-title">CMS & E-commerce Platforms</h5>
+                        <div class="d-flex flex-wrap">
+                            <span class="skill-badge">WordPress</span>
+                            <span class="skill-badge">Shopify</span>
+                            <span class="skill-badge">Wix</span>
+                            <span class="skill-badge">Webflow</span>
+                            <span class="skill-badge">Squarespace</span>
+                            <span class="skill-badge">Magento</span>
+                            <span class="skill-badge">BigCommerce</span>
+                            <span class="skill-badge">WooCommerce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4">
+                        <h5 class="card-title">Tools & Design</h5>
+                        <div class="d-flex flex-wrap">
+                            <span class="skill-badge">Git</span>
+                            <span class="skill-badge">GitHub</span>
+                            <span class="skill-badge">Bitbucket</span>
+                            <span class="skill-badge">Android Studio</span>
+                            <span class="skill-badge">Xcode</span>
+                            <span class="skill-badge">VS Code</span>
+                            <span class="skill-badge">Figma</span>
+                            <span class="skill-badge">Adobe XD</span>
+                            <span class="skill-badge">Canva</span>
+                            <span class="skill-badge">Postman</span>
+                            <span class="skill-badge">Google Analytics</span>
+                            <span class="skill-badge">Yoast SEO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading fw-bold">My Recent Work</h2>
+                <p class="text-muted lead">
+                    Dive into a selection of my projects, showcasing expertise in web, mobile, and full-stack
+                    development.
+                    Each project reflects a commitment to robust solutions and user-centric design.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
+                        <img src="./assets/img/portfolio/Web_App.png" class="card-img-top img-fluid"
+                            alt="E-commerce Web App Screenshot">
+                        <div class="portfolio-overlay">
+                            <h5>E-commerce Platform</h5>
+                            <p>This web platform is built with Laravel and ReactJS. It features secure Stripe payment
+                                integration, full user authentication, and a responsive interface, providing a seamless
+                                and efficient shopping experience for online customers and store administrators alike.
+                            </p>
+                            <div class="mt-auto"> <a href="#contact" class="overlay-action-link stretched-link"
+                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
+                        <img src="./assets/img/portfolio/Flutter_App.jpg" class="card-img-top img-fluid"
+                            alt="Task Manager App Screenshot">
+                        <div class="portfolio-overlay">
+                            <h5>Cross-Platform Task Manager</h5>
+                            <p>Built in Flutter and powered by Firebase, this mobile app allows users to create, edit,
+                                and track tasks with real-time synchronization across devices. It includes reminders,
+                                clean design, and productivity features to help users manage their workflow with ease
+                                daily.</p>
+                            <div class="mt-auto">
+                                <a href="#contact" class="overlay-action-link stretched-link"
+                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
+                        <img src="./assets/img/portfolio/Personal_Portfolio_Website.png" class="card-img-top img-fluid"
+                            alt="Personal Portfolio Website Screenshot">
+                        <div class="portfolio-overlay">
+                            <h5>Responsive Portfolio Site</h5>
+                            <p>This modern portfolio is made using HTML5, CSS3, Bootstrap 5, and Typed.js. Fully
+                                responsive and optimized for all devices, it showcases personal projects in mobile, web,
+                                and full-stack development with engaging animation and professional visual presentation.
+                            </p>
+                            <div class="mt-auto">
+                                <a href="#contact" class="overlay-action-link stretched-link"
+                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
+                        <img src="./assets/img/portfolio/ASP.NET_Core.png" class="card-img-top img-fluid"
+                            alt="ASP.NET Core API Screenshot">
+                        <div class="portfolio-overlay">
+                            <h5>Secure RESTful Inventory API</h5>
+                            <p>A secure, scalable RESTful API created with ASP.NET Core and SQL Server. It provides
+                                authentication, role-based access, and full CRUD operations. Built to manage inventories
+                                efficiently in real time with integration options for enterprise-grade systems.</p>
+                            <div class="mt-auto">
+                                <a href="#contact" class="overlay-action-link stretched-link"
+                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
+                        <img src="./assets/img/portfolio/Real_time_Chat_Application.png" class="card-img-top img-fluid"
+                            alt="Real-time Chat App Screenshot">
+                        <div class="portfolio-overlay">
+                            <h5>Real-Time Messaging Application</h5>
+                            <p>This real-time chat app uses Node.js, Express.js, and Socket.io. It enables instant
+                                messaging, room support, user tracking, and message broadcasting. Designed for
+                                performance, scalability, and seamless communication between users in web applications.
+                            </p>
+                            <div class="mt-auto">
+                                <a href="#contact" class="overlay-action-link stretched-link"
+                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
+                        <img src="./assets/img/portfolio/Sales_Data_Dashboard.png" class="card-img-top img-fluid"
+                            alt="Sales Data Dashboard Screenshot">
+                        <div class="portfolio-overlay">
+                            <h5>Interactive Sales Data Dashboard</h5>
+                            <p>Developed with Vue.js, D3.js, and MongoDB, this dashboard visualizes real-time sales
+                                trends and KPIs using interactive graphs and charts. It’s optimized for fast analytics,
+                                helping businesses evaluate performance and make decisions based on live data.</p>
+                            <div class="mt-auto">
+                                <a href="#contact" class="overlay-action-link stretched-link"
+                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work & Other Experiences Section -->
+    <section id="experience" class="section-padding bg-white">
+        <div class="container">
+            <h2 class="section-heading">Work & Other Experiences</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-item">
+                        <h4>Full-Stack Mobile & Web Developer | Sportster</h4>
+                        <span class="duration">January 2025 - Present</span>
+                        <p>At Sportster, I'm building a dynamic cross-platform sports community application. My
+                            responsibilities include developing player profiles, live match scheduling, and venue
+                            booking functionalities. I leverage Android Studio with Java and Kotlin for
+                            Android, and Swift for robust iOS development. I've focused on designing intuitive
+                            UI/UX, integrating real-time APIs for live updates and push notifications, and
+                            implementing secure backend connectivity to ensure a seamless and highly responsive user
+                            experience across all devices.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-item">
+                        <h4>Chief Technology Officer | WeVenue</h4>
+                        <span class="duration">May 2020 - Present</span>
+                        <p>As CTO of WeVenue, I drive the entire technical strategy and lead full-stack development
+                            for our comprehensive wedding planning platform. My role involves overseeing the
+                            architecture of both mobile and web applications, ensuring robust and scalable
+                            solutions. I specialize in integrating Flutter for cross-platform mobile development with
+                            Firebase as the powerful backend. My efforts have streamlined the user experience for
+                            venue bookings and vendor services, resulting in improved efficiency and user
+                            satisfaction for thousands of clients.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-item">
+                        <h4>Senior Software Engineer | Suzuki Motor</h4>
+                        <span class="duration">May 2020 - January 2025</span>
+                        <p>At Suzuki Motor, I operated in a unique dual role, significantly contributing to the
+                            company's digital transformation as a Senior Software Engineer while also leading
+                            on-ground sales consultation. I was instrumental in developing and deploying
+                            enterprise-grade software solutions, modernizing critical legacy systems, and improving
+                            internal workflows using C#, SQL Server, and cloud-based technologies.
+                            Concurrently, I led the physical sales consulting team, providing expert guidance on vehicle
+                            selection, which directly contributed to significant revenue growth and market share. I
+                            also mentored junior consultants, fostering team development.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-item">
+                        <h4>Digital Product Architect – Cross-Platform Business Solutions | Freelance/Consulting
+                        </h4>
+                        <span class="duration">2018 - Present</span>
+                        <p>As a Digital Product Architect, I've spearheaded the planning, design, and end-to-end
+                            development of complete digital ecosystems for a diverse client base, including startups,
+                            SMEs, and large enterprise clients. My portfolio spans critical industries such as
+                            logistics, e-commerce, edtech, healthcare, and event management. I specialize in
+                            creating robust cross-platform solutions that seamlessly integrate powerful backend logic
+                            with intuitive UI/UX. My technical stack includes Flutter, Android (Java/Kotlin), iOS
+                            (Swift), React, Firebase, Node.js, Laravel (PHP), MySQL, and ASP.NET, ensuring versatile
+                            and scalable deliverables.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-item">
+                        <h4>E-Commerce & CMS Integration Specialist | Freelance/Consulting</h4>
+                        <span class="duration">2017 - Present</span>
+                        <p>I've consistently delivered tailored, highly scalable e-commerce and content management
+                            platforms for clients across various sectors, including retail, education, food &
+                            beverage, events, and professional services. My expertise covers leading platforms like
+                            WooCommerce, Shopify, and WordPress, where I proficiently leverage both code and
+                            no-code solutions. I focus on crafting responsive, SEO-optimized online storefronts
+                            that feature secure payment gateways and efficient real-time order processing systems,
+                            ensuring high conversion rates and optimal user engagement for businesses of all sizes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-item">
+                        <h4>Master Developer in Multi-Platform Application Engineering | Self-Employed/Projects</h4>
+                        <span class="duration">2016 - Present</span>
+                        <p>My journey as a Master Developer encompasses extensive hands-on experience in building
+                            full-scale digital ecosystems across a multitude of platforms: mobile, web, and cloud.
+                            This includes deep dives into native and cross-platform development, sophisticated
+                            backend architecture design, and cutting-edge UI/UX principles. I've successfully
+                            implemented real-world systems such as Restaurant Management Systems (RMS), Learning
+                            Management Systems (LMS), and complex e-commerce solutions, demonstrating a comprehensive
+                            mastery of the entire application development lifecycle from conception to deployment and
+                            maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">Education & Certifications</h2>
+            <div class="row">
+                <!-- Professional Development & Certifications -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm">
+                        <h5 class="card-title fw-bold mb-3" style="color: var(--secondary-color);">Certifications &
+                            Professional Learning</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="bi bi-award-fill me-2 text-secondary"></i>
+                                <strong>Higher Diploma in Software Engineering</strong> – Aptech
+                                <br><small class="text-muted ms-4">Issued: Feb 2025 — Validates advanced software
+                                    architecture, lifecycle management, and team-based development projects.</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-award-fill me-2 text-secondary"></i>
+                                <strong>UI/UX Design & Responsive Web Interfaces</strong> – Udemy
+                                <br><small class="text-muted ms-4">Issued: Aug 2023 — Covers wireframing, Figma,
+                                    interaction design, mobile-first principles, and responsive frameworks.</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-award-fill me-2 text-secondary"></i>
+                                <strong>CS50: Introduction to Computer Science</strong> – HarvardX (edX)
+                                <br><small class="text-muted ms-4">Issued: Jan 2024 — Rigorous fundamentals in
+                                    algorithms, C, Python, web dev, and problem-solving from one of the top CS courses
+                                    globally.</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-award-fill me-2 text-secondary"></i>
+                                <strong>Foundations of Data Structures & Algorithms</strong> – Coursera (UC San Diego)
+                                <br><small class="text-muted ms-4">Issued: May 2024 — In-depth focus on data
+                                    structures, recursion, complexity analysis, and algorithm design.</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-award-fill me-2 text-secondary"></i>
+                                <strong>Google IT Support Certificate</strong> – Coursera (Google)
+                                <br><small class="text-muted ms-4">Issued: Oct 2023 — Certified in networking,
+                                    operating systems, system admin, security, and troubleshooting.</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-award-fill me-2 text-secondary"></i>
+                                <strong>Various Specialized Courses</strong> – Udemy, Coursera, Pluralsight
+                                <br><small class="text-muted ms-4">2016 – Present — Ongoing training in AWS,
+                                    Node.js, Firebase, Flutter, DevOps, cybersecurity, and AI fundamentals.</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Academic Achievements -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm">
+                        <h5 class="card-title fw-bold mb-3" style="color: var(--secondary-color);">Academic Achievements
+                        </h5>
+
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="bi bi-mortarboard-fill me-2 text-secondary"></i>
+                                <strong>Aptech Computer Education</strong>
+                                <br><small class="text-muted ms-4">Advanced Diploma in Software Engineering
+                                    (ADSE)</small>
+                                <br><small class="text-muted ms-4">2022 – 2025 — Specialized in full-stack
+                                    development, DBMS, APIs, version control, and agile methodology.</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-book-fill me-2 text-secondary"></i>
+                                <strong>Govt. Degree Boys College Allama Iqbal</strong>
+                                <br><small class="text-muted ms-4">Intermediate – Pre-Engineering (Computer Science
+                                    Stream)</small>
+                                <br><small class="text-muted ms-4">2020 – 2022 — Strong foundation in mathematics,
+                                    physics, and programming concepts.</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-book-fill me-2 text-secondary"></i>
+                                <strong>Matriculation – Science Group</strong>
+                                <br><small class="text-muted ms-4">Board of Secondary Education Karachi</small>
+                                <br><small class="text-muted ms-4">2018 – 2020 — Emphasis on foundational STEM
+                                    subjects: Mathematics, Physics, and Chemistry.</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section id="contact" class="section-padding bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-heading">Get In Touch</h2>
+      <p class="lead">
+        Interested in working together or just want to say hi? I'm open to freelance projects,
+        contract-to-hire, and 30+ hours/week engagements.
+      </p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-lg rounded-4">
+          <div class="card-body p-5">
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="87b7b7cd-f7ae-4354-9c4c-fb98b712fe07">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+                <div class="col-12">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Project Inquiry / Question">
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+              </div>
+
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-outline-primary-custom btn-lg shadow-sm">
+                  <i class="bi bi-send me-2"></i>Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Back to top btn -->
+    <a href="#" class="back-to-topic-btn">🡹</a>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="footer d-flex flex-column flex-md-row justify-content-between align-items-center py-3 my-4"
+            style="border-top: 2px solid var(--primary-color); color: var(--secondary-color);">
+
+            <div class="d-flex flex-column flex-md-row align-items-center mb-3 mb-md-0">
+                <a href="/" class="mb-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="text-body-secondary">© <span id="currentYear"></span> <span
+                        style="color: var(--secondary-color);">Bukhari</span>, All Rights Reserved</span>
+            </div>
+
+            <ul class="nav justify-content-center list-unstyled d-flex flex-wrap">
+                <li class="nav-item">
+                    <a href="#home" class="btn" role="button" aria-label="Home">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="btn" role="button" aria-label="About">
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="btn" role="button" aria-label="Experience">
+                        <span>Experience</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="btn" role="button" aria-label="Projects">
+                        <span>Projects</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                new Typed('.typed-words', {
+                    strings: [
+                        'Web Development.',
+                        'Mobile Development.',
+                        'Backend Systems.',
+                        'UI/UX Design.',
+                        'Database Management.',
+                        'E-commerce Solutions.'
+                    ],
+                    typeSpeed: 70,
+                    backSpeed: 50,
+                    backDelay: 1000,
+                    startDelay: 500,
+                    loop: true,
+                    showCursor: true,
+                    cursorChar: '|'
+                });
+            } catch (e) {
+                console.error('Failed to initialize Typed.js:', e);
+            }
+        });
+    </script>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var footer = document.querySelector('.footer');
+            var button = document.querySelector('.back-to-topic-btn');
+            var footerHeight = footer.offsetHeight;
+            var distanceToFooter = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+
+            if (distanceToFooter <= footerHeight) {
+                button.style.bottom = (footerHeight - distanceToFooter + 20) + 'px';
+                button.classList.add('near-footer');
+            } else {
+                button.style.bottom = '20px';
+                button.classList.remove('near-footer');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
