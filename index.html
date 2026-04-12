@@ -418,6 +418,71 @@
             display: block;
         }
 
+        /* Myworkonotherplatforms Section */
+        #Myworkonotherplatforms .section-heading {
+            margin-bottom: 3rem;
+        }
+
+        .Myworkonotherplatforms-card {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem;
+            padding: 1.5rem;
+            border-bottom: 5px solid var(--primary-color);
+            border-radius: 1.25rem;
+            background-color: var(--white);
+            width: calc(50% - 1rem);
+            /* Two cards per row with gap */
+            max-width: 450px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .Myworkonotherplatforms-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .Myworkonotherplatforms-top-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .Myworkonotherplatforms-img-fluid {
+            border-radius: 50%;
+            object-fit: cover;
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .Myworkonotherplatforms-card:hover .Myworkonotherplatforms-img-fluid {
+            border-color: var(--secondary-color);
+        }
+
+        .Myworkonotherplatforms-text-container {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .Myworkonotherplatforms-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .Myworkonotherplatforms-mail {
+            font-size: 1rem;
+            color: var(--dark-text);
+            margin-bottom: 0;
+        }
+
         /* --- Portfolio Section --- */
         .portfolio-item {
             position: relative;
@@ -666,6 +731,13 @@
             .about-profile-card {
                 margin-bottom: 40px;
             }
+
+            .Myworkonotherplatforms-card {
+                width: calc(100% - 1rem);
+                /* Single column on medium screens */
+                max-width: 500px;
+                /* Limit width for single column */
+            }
         }
 
         @media (max-width: 767.98px) {
@@ -715,6 +787,23 @@
             .languages-badges .badge {
                 font-size: 0.8rem;
                 padding: 6px 12px;
+            }
+
+            .Myworkonotherplatforms-card {
+                padding: 1rem;
+            }
+
+            .Myworkonotherplatforms-img-fluid {
+                width: 60px;
+                height: 60px;
+            }
+
+            .Myworkonotherplatforms-name {
+                font-size: 1.3rem;
+            }
+
+            .Myworkonotherplatforms-mail {
+                font-size: 0.9rem;
             }
         }
 
@@ -792,7 +881,8 @@
 
         <!-- LinkedIn Icon -->
         <a target="_blank" rel="noopener noreferrer" class="fs-3"
-            href="https://www.linkedin.com/in/hamza-bukhari-69a186262/?trk=public-profile-join-page" aria-label="LinkedIn">
+            href="https://www.linkedin.com/in/hamza-bukhari-69a186262/?trk=public-profile-join-page"
+            aria-label="LinkedIn">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1.5em"
                 width="1.5em" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -927,7 +1017,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section-padding">
+    <section id="services" class="section-padding bg-light">
         <div class="container">
             <h2 class="section-heading">What I Offer</h2>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -1189,8 +1279,82 @@
         </div>
     </section>
 
+    <!-- My Work On Other Platforms -->
+    <section id="Myworkonotherplatforms" class="section-padding bg-white">
+        <h2 class="section-heading">My Work On Other Platforms</h2>
+        <div class="container d-flex flex-wrap justify-content-center g-4">
+            <a href="https://profile.indeed.com/p/syedmuhammadh-bpjh7lh" target="_blank"
+                class="Myworkonotherplatforms-card text-decoration-none">
+                <div class="Myworkonotherplatforms-top-container">
+                    <img src="./assets/img/platfroms/indeed.png" class="Myworkonotherplatforms-img-fluid"
+                        alt="V4uSolutions Logo">
+                    <div class="Myworkonotherplatforms-text-container">
+                        <h5 class="Myworkonotherplatforms-name">Indeed</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/in/hamza-bukhari-69a186262" target="_blank"
+                class="Myworkonotherplatforms-card text-decoration-none">
+                <div class="Myworkonotherplatforms-top-container">
+                    <img src="./assets/img/platfroms/linkedin.png" class="Myworkonotherplatforms-img-fluid"
+                        alt="Linkedin">
+                    <div class="Myworkonotherplatforms-text-container">
+                        <h5 class="Myworkonotherplatforms-name">Linkedin</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.upwork.com/freelancers/~01039a723615d13407?mp_source=share" target="_blank"
+                class="Myworkonotherplatforms-card text-decoration-none">
+                <div class="Myworkonotherplatforms-top-container">
+                    <img src="./assets/img/platfroms/upwork.jpg" class="Myworkonotherplatforms-img-fluid" alt="Upwork">
+                    <div class="Myworkonotherplatforms-text-container">
+                        <h5 class="Myworkonotherplatforms-name">Upwork</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.fiverr.com/s/6Yp88Pq" target="_blank"
+                class="Myworkonotherplatforms-card text-decoration-none">
+                <div class="Myworkonotherplatforms-top-container">
+                    <img src="./assets/img/platfroms/fiver.png" class="Myworkonotherplatforms-img-fluid" alt="Fiver">
+                    <div class="Myworkonotherplatforms-text-container">
+                        <h5 class="Myworkonotherplatforms-name">Fiver</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/hambuk03082551639-sketch" target="_blank"
+                class="Myworkonotherplatforms-card text-decoration-none">
+
+                <div class="Myworkonotherplatforms-top-container">
+                    <img src="./assets/img/platfroms/github.png" class="Myworkonotherplatforms-img-fluid" alt="Github">
+                    <div class="Myworkonotherplatforms-text-container">
+                        <h5 class="Myworkonotherplatforms-name">Github</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="#" target="_blank" class="Myworkonotherplatforms-card text-decoration-none">
+                <div class="Myworkonotherplatforms-top-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
+                        class="Myworkonotherplatforms-img-fluid" alt="Resume">
+                    <div class="Myworkonotherplatforms-text-container">
+                        <h5 class="Myworkonotherplatforms-name">Resume</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="#" target="_blank" class="Myworkonotherplatforms-card text-decoration-none">
+                <div class="Myworkonotherplatforms-top-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135800.png"
+                        class="Myworkonotherplatforms-img-fluid" alt="Curriculum Vitae">
+                    <div class="Myworkonotherplatforms-text-container">
+                        <h5 class="Myworkonotherplatforms-name">Curriculum Vitae</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
     <!-- Work & Other Experiences Section -->
-    <section id="experience" class="section-padding bg-white">
+    <section id="experience" class="section-padding bg-light">
         <div class="container">
             <h2 class="section-heading">Work & Other Experiences</h2>
             <div class="row">
