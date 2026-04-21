@@ -301,89 +301,482 @@
             margin-bottom: 20px;
         }
 
-        /* --- About Section --- */
-        .about-profile-card {
-            border: none;
-            box-shadow: var(--card-shadow);
-            border-radius: 15px;
-            padding: 30px;
-            background-color: var(--white);
-            text-align: center;
+
+        /* ===================== ABOUT SECTION PREMIUM ===================== */
+
+        .about-section-padding {
+            padding: 0;
         }
 
-        .about-profile-card img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
+        .about-profile-card {
+            margin-top: 20px;
+            background: #fff;
+            border-radius: 22px;
+            padding: 35px 28px;
+            text-align: center;
+            transition: .4s ease;
+        }
+
+        .profile-img-wrapper {
+            width: 170px;
+            height: 170px;
+            margin: auto;
             border-radius: 50%;
-            border: 5px solid var(--primary-color);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            margin-bottom: 25px;
+            padding: 6px;
+            background: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .profile-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .about-profile-card h3 {
-            color: var(--primary-color);
+            font-size: 1.7rem;
             font-weight: 700;
             margin-bottom: 5px;
         }
 
-        .about-profile-card .text-muted {
-            font-size: 0.95rem;
-            color: #6c757d !important;
+        .role-text {
+            color: #6c757d;
+            font-size: .95rem;
+            margin-bottom: 20px;
+        }
+
+        .profile-meta p {
+            margin-bottom: 10px;
+            color: #444;
+            font-size: .95rem;
+        }
+
+        .profile-meta i {
+            color: var(--primary-color);
+            width: 25px;
+        }
+
+        .about-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .about-social-links a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111;
+            transition: .3s ease;
+            text-decoration: none;
+        }
+
+        .about-social-links a:hover {
+            background: var(--secondary-color);
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .about-content-box {
+            background: #fff;
+            padding: 40px;
         }
 
         .about-info-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+            font-size: 1.08rem;
+            color: #555;
+            line-height: 1.8;
         }
 
-        .about-info-text strong {
+        .mini-box {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 18px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            transition: .3s ease;
+            height: 100%;
+        }
+
+        .mini-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .07);
+        }
+
+        .mini-box i {
+            font-size: 1.4rem;
             color: var(--primary-color);
+            width: 45px;
+            height: 45px;
+            background: rgba(13, 110, 253, .1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .about-philosophy-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
+        .mini-box h6 {
+            margin: 0;
+            font-weight: 700;
         }
 
-        .about-philosophy-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-            font-size: 1rem;
-            color: var(--dark-text);
-        }
-
-        .about-philosophy-list li i {
-            position: absolute;
-            left: 0;
-            top: 5px;
-            color: var(--secondary-color);
-            font-size: 1.2rem;
+        .mini-box span {
+            font-size: .9rem;
+            color: #777;
         }
 
         .languages-badges .badge {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 8px 15px;
-            border-radius: 25px;
+            padding: 10px 16px;
             margin: 5px;
-            font-size: 0.9rem;
+            border-radius: 30px;
+            background: var(--primary-color);
+            color: #fff;
             font-weight: 500;
-            display: inline-block;
         }
 
-        /* --- Skills Section --- */
-        .skill-badge {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 5px 12px;
-            border-radius: 20px;
-            margin: 5px 5px 5px 0;
+        .small-title {
             display: inline-block;
-            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-subheading {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        /* Default = mobile (scroll enabled) */
+        .instagram-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+        }
+
+        .instagram-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .instagram-item {
+            flex: 0 0 50%;
+            /* 👈 2 items visible on small screens */
+        }
+
+        /* Cards */
+        .instagram-card {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Image */
+        .section-instagram-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ≥576px → 3 items */
+        @media (min-width: 576px) {
+            .instagram-item {
+                flex: 0 0 33.33%;
+            }
+        }
+
+        /* ≥768px → 4 items */
+        @media (min-width: 768px) {
+            .instagram-item {
+                flex: 0 0 25%;
+            }
+
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Icon styling */
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: var(--primary-color);
+            color: #fff;
+            font-size: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Text */
+        .service-card h5 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Responsive spacing */
+        @media (max-width: 576px) {
+            .service-card {
+                padding: 25px 15px;
+            }
+
+            .hidden-service {
+                display: none;
+            }
+        }
+
+
+        /* ✅ Desktop: disable scroll + show all in row */
+        @media (min-width: 992px) {
+            .instagram-scroll {
+                overflow-x: visible;
+                /* 👈 no scroll */
+                flex-wrap: nowrap;
+                /* keep in one row */
+                justify-content: space-between;
+            }
+
+            .instagram-item {
+                flex: 1;
+                /* 👈 all items share space equally */
+                max-width: 100%;
+            }
+        }
+
+        /* ===================== PREMIUM PORTFOLIO CSS ===================== */
+
+        #portfolio {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ================= Scroll Wrapper ================= */
+
+        /* .portfolio-scroll-wrap{
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-behavior:smooth;
+    padding-bottom:14px;
+    scrollbar-width:thin;
+}
+
+.portfolio-scroll-wrap::-webkit-scrollbar{
+    height:8px;
+} */
+        .portfolio-scroll-wrap {
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            padding-bottom: 14px;
+
+            /* Hide scrollbar */
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE / old Edge */
+        }
+
+        /* Chrome / Safari / Edge */
+        .portfolio-scroll-wrap::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .portfolio-scroll-wrap::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 50px;
+        }
+
+        .portfolio-scroll-wrap::-webkit-scrollbar-thumb {
+            background: rgba(var(--primary-color-rgb), 0.45);
+            border-radius: 50px;
+        }
+
+        /* ================= Grid Layout ================= */
+
+        .portfolio-grid {
+            display: grid;
+            grid-auto-flow: column;
+            gap: 24px;
+            padding: 6px;
+        }
+
+        /* Mobile = 1 Card */
+        .portfolio-grid {
+            grid-auto-columns: calc(100% - 5px);
+        }
+
+        /* Tablet = 2 Cards */
+        @media (min-width:768px) {
+            .portfolio-grid {
+                grid-auto-columns: calc(50% - 12px);
+            }
+        }
+
+        /* Laptop = 3 Cards */
+        @media (min-width:1200px) {
+            .portfolio-grid {
+                grid-auto-columns: calc(33.333% - 16px);
+            }
+        }
+
+        /* Large Desktop = 4 Cards */
+        @media (min-width:1600px) {
+            .portfolio-grid {
+                grid-auto-columns: calc(25% - 18px);
+            }
+        }
+
+        /* ================= Card ================= */
+
+        .portfolio-card {
+            background: #fff;
+            border-radius: 22px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ================= Image ================= */
+
+        .portfolio-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-card:hover img {
+            transform: scale(1.06);
+        }
+
+        /* ================= Content ================= */
+
+        .portfolio-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .portfolio-tag {
+            display: inline-block;
+            background: rgba(var(--primary-color-rgb), 0.10);
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 30px;
+            margin-bottom: 14px;
+        }
+
+        .portfolio-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark-text);
+        }
+
+        .portfolio-content p {
+            color: #666;
+            font-size: 0.96rem;
+            line-height: 1.7;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-content a {
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: 0.3s ease;
+        }
+
+        .portfolio-content a:hover {
+            letter-spacing: 0.3px;
+        }
+
+        .portfolio-content a i {
+            margin-left: 8px;
+        }
+
+        /* ================= Responsive ================= */
+
+        @media (max-width:991px) {
+
+            .portfolio-card img {
+                height: 220px;
+            }
+
+        }
+
+        @media (max-width:767px) {
+
+            .portfolio-content {
+                padding: 20px;
+            }
+
+            .portfolio-card img {
+                height: 210px;
+            }
+
+            .portfolio-content h4 {
+                font-size: 1.1rem;
+            }
+
+            .portfolio-content p {
+                font-size: 0.92rem;
+            }
+
+        }
+
+        @media (max-width:575px) {
+
+            .portfolio-card img {
+                height: 200px;
+            }
+
+            .portfolio-content {
+                padding: 18px;
+            }
+
         }
 
         /* --- Experience Section --- */
@@ -483,56 +876,7 @@
             margin-bottom: 0;
         }
 
-        /* --- Portfolio Section --- */
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-        }
 
-        .portfolio-item img {
-            width: 100%;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(var(--primary-color-rgb), 0.85);
-            color: var(--white);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay h5 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .portfolio-overlay p {
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
 
         /* --- Footer --- */
         .footer {
@@ -572,9 +916,6 @@
             box-sizing: border-box;
         }
 
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
 
         .portfolio-overlay h5 {
             font-size: 1.7rem;
@@ -619,15 +960,6 @@
             font-size: 1.2em;
         }
 
-        .portfolio-item .stretched-link::after {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 1;
-            content: "";
-        }
 
         /* --- Back to Topic Button --- */
         .back-to-topic-btn {
@@ -849,6 +1181,23 @@
                 margin-top: 15px;
             }
         }
+
+
+        /* Mobile */
+        @media(max-width:768px) {
+            .about-content-box {
+                padding: 25px;
+            }
+
+            .about-profile-card {
+                padding: 25px;
+            }
+
+            .profile-img-wrapper {
+                width: 140px;
+                height: auto;
+            }
+        }
     </style>
 </head>
 
@@ -906,10 +1255,9 @@
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education & Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Myworkonotherplatforms">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#journey">Education & Certifications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -944,338 +1292,378 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section-padding bg-white">
+    <!-- ===================== ABOUT SECTION (UPGRADED PREMIUM VERSION) ===================== -->
+    <section id="about" class="about-section-padding bg-white position-relative overflow-hidden">
         <div class="container">
-            <div class="row align-items-center">
-                <section class="col-lg-4 col-md-5 text-center">
-                    <div class="about-profile-card shadow-sm p-4 bg-white rounded">
-                        <figure class="mb-3">
-                            <img src="./assets/img/my_photos/flip.jpg" class="img-fluid rounded-circle shadow-sm"
-                                alt="Portrait of Hamza Bukhari" width="150" height="150">
-                        </figure>
-                        <figcaption>
-                            <h3 class="fw-bold mb-1">Hamza Bukhari</h3>
-                            <p class="text-muted mb-1">Full-Stack Developer | Web, Android & iOS</p>
-                            <p class="text-muted mb-1"><i class="fas fa-map-marker-alt me-2"></i> Karachi, Pakistan</p>
-                            <p class="text-muted mb-1"><i class="fas fa-money-bill-wave me-2"></i> $18.00/hr</p>
-                            <p class="text-muted"><i class="fas fa-clock me-2"></i> Available: 30+ hrs/week</p>
-                            <a href="#contact" class="btn btn-outline-primary-custom mt-3"
-                                aria-label="Hire Hamza Bukhari">
-                                Hire Me
-                            </a>
-                        </figcaption>
-                    </div>
-                </section>
+            <div class="row align-items-center g-5">
 
-                <div class="col-lg-8 col-md-7">
-                    <h2 class="section-heading">About Me</h2>
-                    <p class="about-info-text">
-                        I’m a Full-Stack Web & Mobile App Developer with over 5 years of hands-on experience in
-                        crafting robust digital solutions for startups, SMEs, and enterprises. My journey has been
-                        driven by a passion for transforming complex ideas into intuitive and high-performing platforms.
-                        From initial branding and UI/UX design to comprehensive website and mobile app
-                        development, I deliver complete, scalable, and business-ready products that not only look
-                        great but also effectively convert and perform.
-                    </p>
-                    <p class="about-info-text">
-                        My expertise spans diverse industries, including e-commerce, education, healthcare, logistics,
-                        and event management, allowing me to tailor solutions to unique business challenges. I am
-                        committed to writing clean, scalable code and providing thorough documentation. My
-                        approach is always business-focused, integrating crucial elements like SEO optimization,
-                        marketing strategies, and sales funnel enhancements from the ground up, ensuring your digital
-                        investment yields maximum returns.
-                    </p>
-                    <div class="mt-4">
-                        <h4>My Development Philosophy:</h4>
-                        <ul class="about-philosophy-list">
-                            <li><i class="fas fa-check-circle"></i> <strong>User-Centric Design:</strong> Always
-                                prioritizing the end-user, I create intuitive and delightful experiences that drive
-                                engagement.</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>Scalability & Maintainability:</strong>
-                                Building future-proof solutions that grow seamlessly with your business and are easy to
-                                manage.</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>Performance Optimization:</strong> Dedicated
-                                to developing fast, efficient, and highly responsive applications for superior user
-                                satisfaction.</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>Business-Driven Development:</strong>
-                                Aligning every technical decision with your strategic business objectives to ensure
-                                tangible ROI.</li>
-                        </ul>
-                    </div>
-                    <div class="mt-4 languages-badges">
-                        <h4>Spoken Languages:</h4>
-                        <span class="badge">English: Native or Bilingual</span>
-                        <span class="badge">Urdu: Native or Bilingual</span>
-                        <span class="badge">Chinese: Conversational</span>
-                        <span class="badge">German: Conversational</span>
-                        <span class="badge">Spanish: Conversational</span>
+                <!-- Left Profile Card -->
+                <div class="col-lg-4">
+                    <div class="about-profile-card">
+
+                        <div class="profile-img-wrapper">
+                            <img src="./assets/img/my_photos/flip.jpg" alt="Portrait of Hamza Bukhari">
+                        </div>
+
+                        <h3>Hamza Bukhari</h3>
+                        <p class="role-text">Full-Stack Developer | Web, Android & iOS</p>
+
+                        <div class="profile-meta">
+                            <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
+                            <p><i class="fas fa-money-bill-wave"></i> $18/hr</p>
+                            <p><i class="fas fa-clock"></i> Available 30+ hrs/week</p>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="about-social-links mt-4">
+                            <a href="https://github.com/hambuk03082551639-sketch" target="_blank"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/hamza-bukhari-69a186262" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/bukhari_jewel/" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.upwork.com/freelancers/~01039a723615d13407" target="_blank"><i
+                                    class="fas fa-laptop-code"></i></a>
+                            <a href="https://www.facebook.com/HamzaBukhari683" target="_blank"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                        </div>
+
+                        <a href="#contact" class="btn btn-outline-primary-custom mt-3">
+                            Hire Me
+                        </a>
                     </div>
                 </div>
+
+                <!-- Right Content -->
+                <div class="col-lg-8">
+                    <div class="about-content-box">
+                        <h2 class="section-heading">About Me</h2>
+
+                        <p class="about-info-text">
+                            I’m a passionate <strong>Full-Stack Web & Mobile App Developer</strong> with 5+ years of
+                            experience building modern websites, scalable web systems, and mobile applications for
+                            startups,
+                            businesses, and growing brands.
+                        </p>
+
+                        <p class="about-info-text">
+                            My expertise covers <strong>UI/UX Design, Frontend Development, Backend Architecture,
+                                Android/iOS Apps, CMS Platforms, SEO, and Business Automation</strong>. I focus on clean
+                            code, fast performance, elegant design, and real business growth.
+                        </p>
+
+                        <!-- Highlights -->
+                        <div class="row g-3 mt-4">
+
+                            <div class="col-md-6">
+                                <div class="mini-box">
+                                    <i class="fas fa-laptop-code"></i>
+                                    <div>
+                                        <h6>Web Development</h6>
+                                        <span>React, Laravel, PHP, WordPress</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mini-box">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <h6>Mobile Apps</h6>
+                                        <span>Flutter, Android, iOS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mini-box">
+                                    <i class="fas fa-database"></i>
+                                    <div>
+                                        <h6>Backend Systems</h6>
+                                        <span>Firebase, MySQL, APIs</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mini-box">
+                                    <i class="fas fa-chart-line"></i>
+                                    <div>
+                                        <h6>Business Growth</h6>
+                                        <span>SEO, Funnels, Optimization</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Languages -->
+                        <div class="mt-5">
+                            <h5 class="mb-3">Languages</h5>
+                            <div class="languages-badges">
+                                <span class="badge">English</span>
+                                <span class="badge">Urdu</span>
+                                <span class="badge">Chinese</span>
+                                <span class="badge">German</span>
+                                <span class="badge">Spanish</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="section-heading">What I Offer</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <div class="col">
-                    <div class="card p-4 text-center">
-                        <div class="icon-box"><i class="fas fa-globe"></i></div>
-                        <h5 class="card-title">Web Development</h5>
-                        <p class="card-text">Custom Coded Websites (HTML5, CSS3, JavaScript, PHP, Laravel, React,
-                            Angular, Node.js), CMS Platforms (WordPress, Shopify, Wix, Webflow), E-commerce Development
-                            (WooCommerce, Shopify), SEO Optimization, Speed Performance, Security.</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card p-4 text-center">
-                        <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
-                        <h5 class="card-title">Mobile App Development</h5>
-                        <p class="card-text">Native Android (Java, Kotlin) & iOS (Swift) Apps, Cross-Platform
-                            Development (Flutter), Backend Integration (Firebase, REST APIs), Real-Time Features (Chat,
-                            Notifications), App Store & Play Store Publishing.</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card p-4 text-center">
-                        <div class="icon-box"><i class="fas fa-paint-brush"></i></div>
-                        <h5 class="card-title">UI/UX & Graphic Design</h5>
-                        <p class="card-text">App & Web UI/UX (Figma, Adobe XD, Canva), Branding, Logo Design, Marketing
-                            Assets, Fully Responsive, Accessible Layouts. Transforming designs into beautiful,
-                            functional UIs.</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card p-4 text-center">
-                        <div class="icon-box"><i class="fas fa-database"></i></div>
-                        <h5 class="card-title">Backend & Database Engineering</h5>
-                        <p class="card-text">Scalable and secure backends using Firebase, MySQL, and SQL Server. Built
-                            RESTful APIs for seamless communication, implemented RBAC, real-time sync, and database
-                            indexing for performance.</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card p-4 text-center">
-                        <div class="icon-box"><i class="fas fa-shopping-cart"></i></div>
-                        <h5 class="card-title">E-commerce & CMS Integration</h5>
-                        <p class="card-text">Tailored, scalable e-commerce and content management platforms for various
-                            industries. Expertise in WooCommerce, Shopify, and WordPress, covering secure payments,
-                            real-time orders, and admin panels.</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card p-4 text-center">
-                        <div class="icon-box"><i class="fas fa-chart-line"></i></div>
-                        <h5 class="card-title">SEO & Marketing Integration</h5>
-                        <p class="card-text">Optimizing pages using Yoast SEO, schema markup, meta tags, and sitemaps.
-                            Integrated Google Analytics, Tag Manager, and Search Console for traffic tracking and
-                            conversion analysis.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section-padding bg-white">
-        <div class="container">
-            <h2 class="section-heading">Technical Skills</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card p-4">
-                        <h5 class="card-title">Languages & Frameworks</h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="skill-badge">HTML5</span>
-                            <span class="skill-badge">CSS3</span>
-                            <span class="skill-badge">JavaScript</span>
-                            <span class="skill-badge">PHP</span>
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">Laravel</span>
-                            <span class="skill-badge">Node.js</span>
-                            <span class="skill-badge">React</span>
-                            <span class="skill-badge">Angular</span>
-                            <span class="skill-badge">Flutter</span>
-                            <span class="skill-badge">Dart</span>
-                            <span class="skill-badge">Swift</span>
-                            <span class="skill-badge">Kotlin</span>
-                            <span class="skill-badge">Java</span>
-                            <span class="skill-badge">C#</span>
-                            <span class="skill-badge">TypeScript</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card p-4">
-                        <h5 class="card-title">Databases & Backends</h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="skill-badge">MySQL</span>
-                            <span class="skill-badge">MongoDB</span>
-                            <span class="skill-badge">Firebase Firestore</span>
-                            <span class="skill-badge">Realtime Database</span>
-                            <span class="skill-badge">SQL Server</span>
-                            <span class="skill-badge">ASP.NET</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card p-4">
-                        <h5 class="card-title">CMS & E-commerce Platforms</h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="skill-badge">WordPress</span>
-                            <span class="skill-badge">Shopify</span>
-                            <span class="skill-badge">Wix</span>
-                            <span class="skill-badge">Webflow</span>
-                            <span class="skill-badge">Squarespace</span>
-                            <span class="skill-badge">Magento</span>
-                            <span class="skill-badge">BigCommerce</span>
-                            <span class="skill-badge">WooCommerce</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card p-4">
-                        <h5 class="card-title">Tools & Design</h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="skill-badge">Git</span>
-                            <span class="skill-badge">GitHub</span>
-                            <span class="skill-badge">Bitbucket</span>
-                            <span class="skill-badge">Android Studio</span>
-                            <span class="skill-badge">Xcode</span>
-                            <span class="skill-badge">VS Code</span>
-                            <span class="skill-badge">Figma</span>
-                            <span class="skill-badge">Adobe XD</span>
-                            <span class="skill-badge">Canva</span>
-                            <span class="skill-badge">Postman</span>
-                            <span class="skill-badge">Google Analytics</span>
-                            <span class="skill-badge">Yoast SEO</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section-padding bg-light">
+        <!-- ================= Social Feed Section ================= -->
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-heading fw-bold">My Recent Work</h2>
-                <p class="text-muted lead">
-                    Dive into a selection of my projects, showcasing expertise in web, mobile, and full-stack
-                    development.
-                    Each project reflects a commitment to robust solutions and user-centric design.
+                <span class="small-title">My Community Presence</span>
+                <h2 class="section-heading">Follow My Latest Updates</h2>
+                <p class="section-subheading">
+                    Stay connected with my latest Facebook posts, Instagram content, project updates,
+                    coding journey, and behind-the-scenes work.
+                </p>
+            </div>
+            <div class="container-fluid mb-5">
+                <div class="instagram-scroll">
+
+                    <div class="instagram-item">
+                        <div class="instagram-card">
+                            <a href="https://www.instagram.com/bukhari_jewel/p/CnFZjYGt0HO/"><img
+                                    src="./assets/img/postpics/Gold_Rings.png" class="section-instagram-card-img"></a>
+                        </div>
+                    </div>
+
+                    <div class="instagram-item">
+                        <div class="instagram-card">
+                            <a href="https://www.instagram.com/bukhari_jewel/p/CyH_rXZtt03/"><img
+                                    src="./assets/img/postpics/Golden Brac.png" class="section-instagram-card-img"></a>
+                        </div>
+                    </div>
+
+                    <div class="instagram-item">
+                        <div class="instagram-card">
+                            <a href="https://www.instagram.com/bukhari_jewel/p/Cm7Rv8PtifU/"><img
+                                    src="./assets/img/postpics/Bracelet.png" class="section-instagram-card-img"></a>
+                        </div>
+                    </div>
+
+                    <div class="instagram-item">
+                        <div class="instagram-card">
+                            <a href="https://www.instagram.com/bukhari_jewel/p/CnHQmsON5U6/"><img
+                                    src="./assets/img/postpics/White_diamond.png"
+                                    class="section-instagram-card-img"></a>
+                        </div>
+                    </div>
+
+                    <div class="instagram-item">
+                        <div class="instagram-card">
+                            <a href="https://www.instagram.com/bukhari_jewel/p/CrGyqc-N_UQ/"><img
+                                    src="./assets/img/postpics/Crown.png" class="section-instagram-card-img"></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- What I Offer Services Section -->
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <h2 class="section-heading">What I Offer</h2>
+                <p class="section-subheading mx-auto">
+                    High-quality digital solutions designed for performance, scalability, and business growth.
                 </p>
             </div>
 
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
-                        <img src="./assets/img/portfolio/Web_App.png" class="card-img-top img-fluid"
-                            alt="E-commerce Web App Screenshot">
-                        <div class="portfolio-overlay">
-                            <h5>E-commerce Platform</h5>
-                            <p>This web platform is built with Laravel and ReactJS. It features secure Stripe payment
-                                integration, full user authentication, and a responsive interface, providing a seamless
-                                and efficient shopping experience for online customers and store administrators alike.
+            <!-- Services -->
+
+            <div class="row g-4" id="servicesContainer">
+
+                <div class="col-12 col-sm-6 col-lg-4 service-item">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon"><i class="fas fa-code"></i></div>
+                        <h5>Web Development</h5>
+                        <p>Modern, responsive websites and systems.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 service-item">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h5>Mobile Apps</h5>
+                        <p>Android, iOS & Flutter apps.</p>
+                    </div>
+                </div>
+
+                <!-- Hidden initially -->
+                <div class="col-12 col-sm-6 col-lg-4 service-item hidden-service">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h5>UI/UX Design</h5>
+                        <p>Clean and user-focused interfaces.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 service-item hidden-service">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon"><i class="fas fa-server"></i></div>
+                        <h5>Backend Systems</h5>
+                        <p>Secure APIs and scalable systems.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 service-item hidden-service">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon"><i class="fas fa-cart-shopping"></i></div>
+                        <h5>E-Commerce</h5>
+                        <p>Online stores with payments.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 service-item hidden-service">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <h5>SEO & Growth</h5>
+                        <p>Boost traffic and conversions.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Buttons -->
+        <div class="text-center mt-5">
+            <button id="showMoreBtn" class="btn btn-primary-custom px-5 py-2">
+                Show More
+            </button>
+
+            <a href="#contact" id="contactBtn" class="btn btn-primary-custom px-5 py-2 d-none">
+                Let’s Work Together
+            </a>
+        </div>
+        </div>
+
+    </section>
+
+    <!-- ===================== PREMIUM PORTFOLIO SECTION ===================== -->
+    <section id="portfolio" class="section-padding bg-white position-relative overflow-hidden">
+        <div class="container">
+
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <span class="small-title">Featured Projects</span>
+                <h2 class="section-heading fw-bold">My Recent Work</h2>
+                <p class="section-subheading mx-auto">
+                    A showcase of selected projects across web development, mobile apps,
+                    backend systems, dashboards, and business solutions.
+                    Crafted with performance, design, and real-world impact in mind.
+                </p>
+            </div>
+
+            <!-- Horizontal Scroll Portfolio -->
+            <div class="portfolio-scroll-wrap">
+                <div class="portfolio-grid">
+
+                    <!-- Item -->
+                    <div class="portfolio-card">
+                        <img src="./assets/img/portfolio/Web_App.png" alt="E-commerce Web App">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Laravel + React</span>
+                            <h4>E-commerce Platform</h4>
+                            <p>
+                                Secure online store with Stripe payments, admin dashboard,
+                                authentication, inventory system, and responsive UX.
                             </p>
-                            <div class="mt-auto"> <a href="#contact" class="overlay-action-link stretched-link"
-                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
-                            </div>
+                            <a href="#contact">Start Similar Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
-                        <img src="./assets/img/portfolio/Flutter_App.jpg" class="card-img-top img-fluid"
-                            alt="Task Manager App Screenshot">
-                        <div class="portfolio-overlay">
-                            <h5>Cross-Platform Task Manager</h5>
-                            <p>Built in Flutter and powered by Firebase, this mobile app allows users to create, edit,
-                                and track tasks with real-time synchronization across devices. It includes reminders,
-                                clean design, and productivity features to help users manage their workflow with ease
-                                daily.</p>
-                            <div class="mt-auto">
-                                <a href="#contact" class="overlay-action-link stretched-link"
-                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
-                        <img src="./assets/img/portfolio/Personal_Portfolio_Website.png" class="card-img-top img-fluid"
-                            alt="Personal Portfolio Website Screenshot">
-                        <div class="portfolio-overlay">
-                            <h5>Responsive Portfolio Site</h5>
-                            <p>This modern portfolio is made using HTML5, CSS3, Bootstrap 5, and Typed.js. Fully
-                                responsive and optimized for all devices, it showcases personal projects in mobile, web,
-                                and full-stack development with engaging animation and professional visual presentation.
+                    <!-- Item -->
+                    <div class="portfolio-card">
+                        <img src="./assets/img/portfolio/Flutter_App.jpg" alt="Flutter App">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Flutter + Firebase</span>
+                            <h4>Task Manager App</h4>
+                            <p>
+                                Cross-platform productivity app with reminders, sync,
+                                real-time updates, notifications, and clean UI.
                             </p>
-                            <div class="mt-auto">
-                                <a href="#contact" class="overlay-action-link stretched-link"
-                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
-                            </div>
+                            <a href="#contact">Build Mobile App <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
-                        <img src="./assets/img/portfolio/ASP.NET_Core.png" class="card-img-top img-fluid"
-                            alt="ASP.NET Core API Screenshot">
-                        <div class="portfolio-overlay">
-                            <h5>Secure RESTful Inventory API</h5>
-                            <p>A secure, scalable RESTful API created with ASP.NET Core and SQL Server. It provides
-                                authentication, role-based access, and full CRUD operations. Built to manage inventories
-                                efficiently in real time with integration options for enterprise-grade systems.</p>
-                            <div class="mt-auto">
-                                <a href="#contact" class="overlay-action-link stretched-link"
-                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
-                        <img src="./assets/img/portfolio/Real_time_Chat_Application.png" class="card-img-top img-fluid"
-                            alt="Real-time Chat App Screenshot">
-                        <div class="portfolio-overlay">
-                            <h5>Real-Time Messaging Application</h5>
-                            <p>This real-time chat app uses Node.js, Express.js, and Socket.io. It enables instant
-                                messaging, room support, user tracking, and message broadcasting. Designed for
-                                performance, scalability, and seamless communication between users in web applications.
+                    <!-- Item -->
+                    <div class="portfolio-card">
+                        <img src="./assets/img/portfolio/Personal_Portfolio_Website.png" alt="Portfolio Website">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">HTML + Bootstrap</span>
+                            <h4>Modern Portfolio Site</h4>
+                            <p>
+                                Professional personal branding website with animations,
+                                responsive design, lead generation, and clean layout.
                             </p>
-                            <div class="mt-auto">
-                                <a href="#contact" class="overlay-action-link stretched-link"
-                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
-                            </div>
+                            <a href="#contact">Get Portfolio Site <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
-                        <img src="./assets/img/portfolio/Sales_Data_Dashboard.png" class="card-img-top img-fluid"
-                            alt="Sales Data Dashboard Screenshot">
-                        <div class="portfolio-overlay">
-                            <h5>Interactive Sales Data Dashboard</h5>
-                            <p>Developed with Vue.js, D3.js, and MongoDB, this dashboard visualizes real-time sales
-                                trends and KPIs using interactive graphs and charts. It’s optimized for fast analytics,
-                                helping businesses evaluate performance and make decisions based on live data.</p>
-                            <div class="mt-auto">
-                                <a href="#contact" class="overlay-action-link stretched-link"
-                                    rel="noopener noreferrer">Get My Service <i class="bi bi-arrow-right"></i></a>
-                            </div>
+                    <!-- Item -->
+                    <div class="portfolio-card">
+                        <img src="./assets/img/portfolio/ASP.NET_Core.png" alt="API System">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">ASP.NET + SQL</span>
+                            <h4>Inventory REST API</h4>
+                            <p>
+                                Enterprise-grade API with authentication, RBAC,
+                                reporting, secure CRUD operations, and scalability.
+                            </p>
+                            <a href="#contact">Need Backend API <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
+
+                    <!-- Item -->
+                    <div class="portfolio-card">
+                        <img src="./assets/img/portfolio/Real_time_Chat_Application.png" alt="Chat App">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Node.js + Socket.io</span>
+                            <h4>Real-Time Chat App</h4>
+                            <p>
+                                Instant messaging platform with rooms, presence tracking,
+                                notifications, and fast communication system.
+                            </p>
+                            <a href="#contact">Create Chat App <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="portfolio-card">
+                        <img src="./assets/img/portfolio/Sales_Data_Dashboard.png" alt="Dashboard">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Vue + MongoDB</span>
+                            <h4>Sales Dashboard</h4>
+                            <p>
+                                Live analytics dashboard with KPIs, reports, graphs,
+                                filtering, and smart decision insights.
+                            </p>
+                            <a href="#contact">Build Dashboard <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-5">
+                <a href="#contact" class="btn btn-primary-custom px-5 py-3">
+                    Let’s Build Your Next Project
+                </a>
+            </div>
+
         </div>
     </section>
 
@@ -1331,7 +1719,8 @@
                     </div>
                 </div>
             </a>
-            <a href="#" target="_blank" class="Myworkonotherplatforms-card text-decoration-none">
+            <a href="./assets/files/hb_resume.pdf" target="_blank"
+                class="Myworkonotherplatforms-card text-decoration-none">
                 <div class="Myworkonotherplatforms-top-container">
                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
                         class="Myworkonotherplatforms-img-fluid" alt="Resume">
@@ -1340,7 +1729,8 @@
                     </div>
                 </div>
             </a>
-            <a href="#" target="_blank" class="Myworkonotherplatforms-card text-decoration-none">
+            <a href="./assets/files/hb_cv.pdf" target="_blank" download
+                class="Myworkonotherplatforms-card text-decoration-none">
                 <div class="Myworkonotherplatforms-top-container">
                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135800.png"
                         class="Myworkonotherplatforms-img-fluid" alt="Curriculum Vitae">
@@ -1353,188 +1743,157 @@
     </section>
 
 
-    <!-- Work & Other Experiences Section -->
-    <section id="experience" class="section-padding bg-light">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ===================== EXPERIENCE + EDUCATION COMBINED PREMIUM SECTION ===================== -->
+    <section id="journey" class="section-padding bg-light position-relative overflow-hidden">
         <div class="container">
-            <h2 class="section-heading">Work & Other Experiences</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-item">
-                        <h4>Full-Stack Mobile & Web Developer | Sportster</h4>
-                        <span class="duration">January 2025 - Present</span>
-                        <p>At Sportster, I'm building a dynamic cross-platform sports community application. My
-                            responsibilities include developing player profiles, live match scheduling, and venue
-                            booking functionalities. I leverage Android Studio with Java and Kotlin for
-                            Android, and Swift for robust iOS development. I've focused on designing intuitive
-                            UI/UX, integrating real-time APIs for live updates and push notifications, and
-                            implementing secure backend connectivity to ensure a seamless and highly responsive user
-                            experience across all devices.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-item">
-                        <h4>Chief Technology Officer | WeVenue</h4>
-                        <span class="duration">May 2020 - Present</span>
-                        <p>As CTO of WeVenue, I drive the entire technical strategy and lead full-stack development
-                            for our comprehensive wedding planning platform. My role involves overseeing the
-                            architecture of both mobile and web applications, ensuring robust and scalable
-                            solutions. I specialize in integrating Flutter for cross-platform mobile development with
-                            Firebase as the powerful backend. My efforts have streamlined the user experience for
-                            venue bookings and vendor services, resulting in improved efficiency and user
-                            satisfaction for thousands of clients.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-item">
-                        <h4>Senior Software Engineer | Suzuki Motor</h4>
-                        <span class="duration">May 2020 - January 2025</span>
-                        <p>At Suzuki Motor, I operated in a unique dual role, significantly contributing to the
-                            company's digital transformation as a Senior Software Engineer while also leading
-                            on-ground sales consultation. I was instrumental in developing and deploying
-                            enterprise-grade software solutions, modernizing critical legacy systems, and improving
-                            internal workflows using C#, SQL Server, and cloud-based technologies.
-                            Concurrently, I led the physical sales consulting team, providing expert guidance on vehicle
-                            selection, which directly contributed to significant revenue growth and market share. I
-                            also mentored junior consultants, fostering team development.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-item">
-                        <h4>Digital Product Architect – Cross-Platform Business Solutions | Freelance/Consulting
+
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <span class="small-title">Professional Journey</span>
+                <h2 class="section-heading fw-bold">Experience, Education & Growth</h2>
+                <p class="section-subheading mx-auto">
+                    My career path combines real-world business experience, full-stack development,
+                    leadership roles, and continuous learning across modern technologies.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- LEFT SIDE : EXPERIENCE -->
+                <div class="col-lg-7">
+
+                    <div class="premium-card h-100">
+
+                        <h4 class="journey-title mb-4">
+                            <i class="fas fa-briefcase me-2"></i> Work Experience
                         </h4>
-                        <span class="duration">2018 - Present</span>
-                        <p>As a Digital Product Architect, I've spearheaded the planning, design, and end-to-end
-                            development of complete digital ecosystems for a diverse client base, including startups,
-                            SMEs, and large enterprise clients. My portfolio spans critical industries such as
-                            logistics, e-commerce, edtech, healthcare, and event management. I specialize in
-                            creating robust cross-platform solutions that seamlessly integrate powerful backend logic
-                            with intuitive UI/UX. My technical stack includes Flutter, Android (Java/Kotlin), iOS
-                            (Swift), React, Firebase, Node.js, Laravel (PHP), MySQL, and ASP.NET, ensuring versatile
-                            and scalable deliverables.</p>
+
+                        <!-- Item -->
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <h5>Full-Stack Mobile & Web Developer | Sportster</h5>
+                            <small>Jan 2025 – Present</small>
+                            <p>
+                                Building a modern sports community platform with player profiles,
+                                match scheduling, venue booking, push notifications, APIs,
+                                Android & iOS integrations, and scalable backend systems.
+                            </p>
+                        </div>
+
+                        <!-- Item -->
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <h5>Chief Technology Officer | WeVenue</h5>
+                            <small>May 2020 – Present</small>
+                            <p>
+                                Leading technical strategy, architecture, product planning,
+                                Flutter mobile apps, Firebase backend, booking systems,
+                                vendor management, and growth-focused digital products.
+                            </p>
+                        </div>
+
+                        <!-- Item -->
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <h5>Senior Software Engineer | Suzuki Motor</h5>
+                            <small>May 2020 – Jan 2025</small>
+                            <p>
+                                Worked on internal business systems, software modernization,
+                                workflow automation, SQL databases, reporting tools,
+                                and technology-driven sales operations.
+                            </p>
+                        </div>
+
+                        <!-- Item -->
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <h5>Freelance Full-Stack Consultant</h5>
+                            <small>2018 – Present</small>
+                            <p>
+                                Delivered web apps, mobile apps, CMS solutions,
+                                eCommerce stores, dashboards, APIs, UI/UX systems,
+                                and startup MVP products globally.
+                            </p>
+                        </div>
+
                     </div>
+
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-item">
-                        <h4>E-Commerce & CMS Integration Specialist | Freelance/Consulting</h4>
-                        <span class="duration">2017 - Present</span>
-                        <p>I've consistently delivered tailored, highly scalable e-commerce and content management
-                            platforms for clients across various sectors, including retail, education, food &
-                            beverage, events, and professional services. My expertise covers leading platforms like
-                            WooCommerce, Shopify, and WordPress, where I proficiently leverage both code and
-                            no-code solutions. I focus on crafting responsive, SEO-optimized online storefronts
-                            that feature secure payment gateways and efficient real-time order processing systems,
-                            ensuring high conversion rates and optimal user engagement for businesses of all sizes.</p>
+
+                <!-- RIGHT SIDE : EDUCATION -->
+                <div class="col-lg-5">
+
+                    <div class="premium-card mb-4">
+
+                        <h4 class="journey-title mb-4">
+                            <i class="fas fa-graduation-cap me-2"></i> Education
+                        </h4>
+
+                        <div class="edu-box">
+                            <h6>Advanced Diploma in Software Engineering</h6>
+                            <span>Aptech Computer Education</span>
+                            <small>2022 – 2025</small>
+                        </div>
+
+                        <div class="edu-box">
+                            <h6>Intermediate – Pre Engineering</h6>
+                            <span>Govt. Degree Boys College Allama Iqbal</span>
+                            <small>2020 – 2022</small>
+                        </div>
+
+                        <div class="edu-box">
+                            <h6>Matriculation – Science Group</h6>
+                            <span>Board of Secondary Education Karachi</span>
+                            <small>2018 – 2020</small>
+                        </div>
+
                     </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-item">
-                        <h4>Master Developer in Multi-Platform Application Engineering | Self-Employed/Projects</h4>
-                        <span class="duration">2016 - Present</span>
-                        <p>My journey as a Master Developer encompasses extensive hands-on experience in building
-                            full-scale digital ecosystems across a multitude of platforms: mobile, web, and cloud.
-                            This includes deep dives into native and cross-platform development, sophisticated
-                            backend architecture design, and cutting-edge UI/UX principles. I've successfully
-                            implemented real-world systems such as Restaurant Management Systems (RMS), Learning
-                            Management Systems (LMS), and complex e-commerce solutions, demonstrating a comprehensive
-                            mastery of the entire application development lifecycle from conception to deployment and
-                            maintenance.</p>
+
+                    <!-- CERTIFICATIONS -->
+                    <div class="premium-card">
+
+                        <h4 class="journey-title mb-4">
+                            <i class="fas fa-award me-2"></i> Certifications
+                        </h4>
+
+                        <div class="skill-badge-wrap">
+                            <span class="skill-badge">CS50 HarvardX</span>
+                            <span class="skill-badge">Google IT Support</span>
+                            <span class="skill-badge">UI/UX Design</span>
+                            <span class="skill-badge">Flutter Development</span>
+                            <span class="skill-badge">Firebase</span>
+                            <span class="skill-badge">Node.js</span>
+                            <span class="skill-badge">Laravel</span>
+                            <span class="skill-badge">Algorithms</span>
+                            <span class="skill-badge">Responsive Design</span>
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Education & Certifications Section -->
-    <section id="education" class="section-padding">
-        <div class="container">
-            <h2 class="section-heading">Education & Certifications</h2>
-            <div class="row">
-                <!-- Professional Development & Certifications -->
-                <div class="col-md-6 mb-4">
-                    <div class="card p-4 h-100 shadow-sm">
-                        <h5 class="card-title fw-bold mb-3" style="color: var(--secondary-color);">Certifications &
-                            Professional Learning</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <i class="bi bi-award-fill me-2 text-secondary"></i>
-                                <strong>Higher Diploma in Software Engineering</strong> – Aptech
-                                <br><small class="text-muted ms-4">Issued: Feb 2025 — Validates advanced software
-                                    architecture, lifecycle management, and team-based development projects.</small>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-award-fill me-2 text-secondary"></i>
-                                <strong>UI/UX Design & Responsive Web Interfaces</strong> – Udemy
-                                <br><small class="text-muted ms-4">Issued: Aug 2023 — Covers wireframing, Figma,
-                                    interaction design, mobile-first principles, and responsive frameworks.</small>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-award-fill me-2 text-secondary"></i>
-                                <strong>CS50: Introduction to Computer Science</strong> – HarvardX (edX)
-                                <br><small class="text-muted ms-4">Issued: Jan 2024 — Rigorous fundamentals in
-                                    algorithms, C, Python, web dev, and problem-solving from one of the top CS courses
-                                    globally.</small>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-award-fill me-2 text-secondary"></i>
-                                <strong>Foundations of Data Structures & Algorithms</strong> – Coursera (UC San Diego)
-                                <br><small class="text-muted ms-4">Issued: May 2024 — In-depth focus on data
-                                    structures, recursion, complexity analysis, and algorithm design.</small>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-award-fill me-2 text-secondary"></i>
-                                <strong>Google IT Support Certificate</strong> – Coursera (Google)
-                                <br><small class="text-muted ms-4">Issued: Oct 2023 — Certified in networking,
-                                    operating systems, system admin, security, and troubleshooting.</small>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-award-fill me-2 text-secondary"></i>
-                                <strong>Various Specialized Courses</strong> – Udemy, Coursera, Pluralsight
-                                <br><small class="text-muted ms-4">2016 – Present — Ongoing training in AWS,
-                                    Node.js, Firebase, Flutter, DevOps, cybersecurity, and AI fundamentals.</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Academic Achievements -->
-                <div class="col-md-6 mb-4">
-                    <div class="card p-4 h-100 shadow-sm">
-                        <h5 class="card-title fw-bold mb-3" style="color: var(--secondary-color);">Academic Achievements
-                        </h5>
 
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <i class="bi bi-mortarboard-fill me-2 text-secondary"></i>
-                                <strong>Aptech Computer Education</strong>
-                                <br><small class="text-muted ms-4">Advanced Diploma in Software Engineering
-                                    (ADSE)</small>
-                                <br><small class="text-muted ms-4">2022 – 2025 — Specialized in full-stack
-                                    development, DBMS, APIs, version control, and agile methodology.</small>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-book-fill me-2 text-secondary"></i>
-                                <strong>Govt. Degree Boys College Allama Iqbal</strong>
-                                <br><small class="text-muted ms-4">Intermediate – Pre-Engineering (Computer Science
-                                    Stream)</small>
-                                <br><small class="text-muted ms-4">2020 – 2022 — Strong foundation in mathematics,
-                                    physics, and programming concepts.</small>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-book-fill me-2 text-secondary"></i>
-                                <strong>Matriculation – Science Group</strong>
-                                <br><small class="text-muted ms-4">Board of Secondary Education Karachi</small>
-                                <br><small class="text-muted ms-4">2018 – 2020 — Emphasis on foundational STEM
-                                    subjects: Mathematics, Physics, and Chemistry.</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-light">
+    <section id="contact" class="section-padding bg-white">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-heading">Get In Touch</h2>
@@ -1705,6 +2064,38 @@
                 button.style.bottom = '20px';
                 button.classList.remove('near-footer');
             }
+        });
+    </script>
+
+    <script>
+        const showMoreBtn = document.getElementById("showMoreBtn");
+        const contactBtn = document.getElementById("contactBtn");
+        const hiddenItems = document.querySelectorAll(".hidden-service");
+
+        function checkServices() {
+            let hasHidden = false;
+
+            hiddenItems.forEach(item => {
+                if (window.getComputedStyle(item).display === "none") {
+                    hasHidden = true;
+                }
+            });
+
+            if (!hasHidden) {
+                showMoreBtn.style.display = "none";
+                contactBtn.classList.remove("d-none");
+            }
+        }
+
+        // Run on page load
+        window.addEventListener("load", checkServices);
+
+        // Show more click
+        showMoreBtn.addEventListener("click", () => {
+            hiddenItems.forEach(item => item.style.display = "block");
+
+            showMoreBtn.style.display = "none";
+            contactBtn.classList.remove("d-none");
         });
     </script>
 
